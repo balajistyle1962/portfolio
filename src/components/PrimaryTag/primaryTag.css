@@ -1,0 +1,25 @@
+.tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: hsl(240, 5%, 50%);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  cursor: default;
+  transition: all 0.25s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--primary) / 0.4);
+  color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.08);
+}
+
+.tag-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,105 @@
+/* Base Bento Card (reuse) */
+.bento-card {
+  border-radius: 16px;
+  border: 1px solid #27272A;
+  background: #18181B;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.3);
+
+  box-shadow:
+    0 20px 40px -15px rgba(245, 158, 11, 0.1),
+    0 0 60px -20px rgba(245, 158, 11, 0.08);
+}
+
+/* Top glowing line */
+.bento-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(245, 158, 11, 0.4),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+
+
+/* Header */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+/* Skill Name */
+.skill-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #FFFFFF;
+}
+
+/* Category */
+.skill-category {
+  font-family: monospace;
+  font-size: 10px;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Percentage */
+.skill-percentage {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #F59E0B;
+}
+
+/* Background */
+.skill-bar-bg {
+  height: 6px;
+  border-radius: 999px;
+  background: #27272A;
+  overflow: hidden;
+}
+
+/* Fill */
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #F59E0B,
+    #FBBF24
+  );
+
+  width: 0%;
+  transition: width 1s ease;
+}

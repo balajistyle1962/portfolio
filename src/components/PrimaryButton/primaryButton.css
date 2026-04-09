@@ -1,0 +1,23 @@
+.primary-button {
+  background: linear-gradient(135deg, #f9a01a, #dd3ca7);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: opacity 0.15s;
+  display: inline-block;
+  color: #111113;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-button:hover {
+  opacity: 0.9;
+}
+
+.primary-button_icon{
+  margin-left: 5px;
+  margin-top: 5px;
+}
