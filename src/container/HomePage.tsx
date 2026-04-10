@@ -6,6 +6,10 @@ import PrimaryTag from "../components/PrimaryTag/primaryTag";
 import ExperienceCard from "../components/ExperienceCard/experienceCard";
 import InfoCard from "../components/InfoCard/infoCard";
 import Skills from "../components/SkillsCard/skillsCard";
+import type { ExperienceData } from "../components/WorkExperienceCard/workExperienceCard";
+import ScrollReveal from "../components/ScrollReveal/scrollReveal";
+import WorkExperienceCard from "../components/WorkExperienceCard/workExperienceCard";
+
 const HomePage = () =>{
     const onClick = () =>{
         console.log("Click")
@@ -28,6 +32,32 @@ const HomePage = () =>{
       { name: "Angular", level: 70, category: "Web" },
       { name: "Git", level: 78, category: "Tools" },
       { name: "Generative AI / LLM APIs", level: 60, category: "AI" },
+    ];
+
+    //Experience Card Data
+    const experiences: ExperienceData[] = [
+    {
+        role: "React Native Developer",
+        company: "Professional Experience",
+        period: "2022 – Present",
+        points: [
+        "Built cross-platform mobile apps serving thousands of users",
+        "Integrated REST APIs, Firebase & real-time sync",
+        "Implemented push notifications and deep linking",
+        "Optimized performance with Redux & memoization",
+        "Worked in agile sprints",
+        ],
+    },
+    {
+        role: "Angular Developer",
+        company: "Web Development",
+        period: "Project-Based",
+        points: [
+        "Built reusable Angular component libraries",
+        "Developed enterprise dashboards",
+        "Used RxJS for async workflows",
+        ],
+    },
     ];
 
 
@@ -76,6 +106,14 @@ const HomePage = () =>{
             />
 
             <Skills skillsData={skills} />
+
+            <div className="experience-grid">
+            {experiences.map((exp, i) => (
+                <ScrollReveal key={exp.role} delay={i * 150}>
+                    <WorkExperienceCard data={exp} />
+                </ScrollReveal>
+            ))}
+        </div>
 
 
         </>
