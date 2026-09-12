@@ -1,23 +1,46 @@
-import './primaryButton.css'
-// If using react-icons, import as needed:
-import type { IconType } from "react-icons";
+import './primaryButton.css';
+import type { ElementType } from 'react';
+
+type PrimaryButtonVariant = 'primary' | 'secondary';
+type PrimaryButtonIconPosition = 'left' | 'right';
 
 interface PrimaryBtnProps {
     label: string;
     onClick?: () => void;
     icons?: boolean;
-    iconName?: IconType; // expects a React component from react-icons
+    iconName?: ElementType; // expects a component from lucide-react
+    variant?: PrimaryButtonVariant;
+    iconPosition?: PrimaryButtonIconPosition;
 }
 
 const PrimaryBtn = (props: PrimaryBtnProps) => {
-    const { label, onClick, icons, iconName: Icon } = props;
+    const {
+        label,
+        onClick,
+        icons,
+        iconName: Icon,
+        variant = 'primary',
+        iconPosition = 'right',
+    } = props;
+
+    const hasIcon = Boolean(icons && Icon);
 
     return (
-        <div onClick={onClick} className="primary-button">
-            <span>{label}</span>
-            {icons && Icon && (
+        <div
+            onClick={onClick}
+            className={`primary-button primary-button--${variant}`}
+        >
+            {hasIcon && Icon && iconPosition === 'left' && (
                 <span className="primary-button_icon">
-                    <Icon width={15} height={13} viewBox='0 0 20 18'/>
+                    <Icon size={16} />
+                </span>
+            )}
+
+            <span>{label}</span>
+
+            {hasIcon && Icon && iconPosition === 'right' && (
+                <span className="primary-button_icon">
+                    <Icon size={16} />
                 </span>
             )}
         </div>

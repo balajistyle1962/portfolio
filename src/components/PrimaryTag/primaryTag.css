@@ -1,4 +1,8 @@
 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
   padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.2);
@@ -9,6 +13,11 @@
   backdrop-filter: blur(6px);
   cursor: default;
   transition: all 0.25s ease;
+}
+
+.tag-icon {
+  display: inline-flex;
+  align-items: center;
 }
 
 .tag:hover {

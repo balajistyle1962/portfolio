@@ -1,23 +1,46 @@
 .primary-button {
-  background: linear-gradient(135deg, #f9a01a, #dd3ca7);
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 15px 20px;
-  border-radius: 12px;
-  transition: opacity 0.15s;
-  display: inline-block;
-  color: #111113;
-  cursor: pointer;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: 12px;
+
+  cursor: pointer;
+  transition: opacity 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.primary-button:hover {
+.primary-button:active {
+  transform: translateY(1px);
+}
+
+/* Gradient / filled button */
+.primary-button--primary {
+  background: linear-gradient(135deg, #f9a01a, #dd3ca7);
+  color: #111113;
+  border: 1px solid transparent;
+}
+
+.primary-button--primary:hover {
   opacity: 0.9;
 }
 
-.primary-button_icon{
-  margin-left: 5px;
-  margin-top: 5px;
+/* Outlined button */
+.primary-button--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.primary-button--secondary:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.primary-button_icon {
+  display: inline-flex;
+  align-items: center;
 }

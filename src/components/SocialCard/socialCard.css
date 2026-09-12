@@ -1,0 +1,49 @@
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #27272A;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #F59E0B;
+}
+
+.social-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.social-label {
+  font-size: 12px;
+  color: #9CA3AF;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.social-text {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.social-card:hover .social-text {
+  color: #F59E0B;
+}
+
+.social-arrow {
+  color: rgba(156, 163, 175, 0.3);
+  transition: all 0.3s ease;
+}
+
+.social-card:hover .social-arrow {
+  color: #F59E0B;
+}

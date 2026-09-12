@@ -1,123 +1,75 @@
-import PrimaryBtn from "../components/PrimaryButton/primaryButton";
-import { ArrowRight } from "lucide-react";
-import { User } from "lucide-react";
-import { Code } from "lucide-react";
-import PrimaryTag from "../components/PrimaryTag/primaryTag";
-import ExperienceCard from "../components/ExperienceCard/experienceCard";
-import InfoCard from "../components/InfoCard/infoCard";
-import Skills from "../components/SkillsCard/skillsCard";
-import type { ExperienceData } from "../components/WorkExperienceCard/workExperienceCard";
-import ScrollReveal from "../components/ScrollReveal/scrollReveal";
-import WorkExperienceCard from "../components/WorkExperienceCard/workExperienceCard";
+import './HomePage.css';
+import { ArrowRight, Download, Sparkles } from 'lucide-react';
+import PrimaryButton from '../components/PrimaryButton/primaryButton';
+import PrimaryTag from '../components/PrimaryTag/primaryTag';
+import type { TagItem } from '../components/PrimaryTag/primaryTag';
 
-const HomePage = () =>{
-    const onClick = () =>{
-        console.log("Click")
+const heroTags: (string | TagItem)[] = [
+    'React Native',
+    'Angular',
+    { label: 'Generative AI', icon: Sparkles },
+];
+
+const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+};
 
-    const tags = ["React", "TypeScript", "CSS"];
+const HomePage = () => {
+    return (
+        <section id="hero" className="home-page">
+            <div className="hero-container">
+                <div className="hero-content">
+                    <span className="hero-badge">
+                        <span className="hero-badge-dot" />
+                        Available for new opportunities
+                    </span>
 
-    interface Skill {
-      name: string;
-      level: number;
-      category: string;
-    }
-    
-    const skills: Skill[] = [
-      { name: "React Native", level: 90, category: "Mobile" },
-      { name: "JavaScript / TypeScript", level: 88, category: "Language" },
-      { name: "Redux / Context API", level: 82, category: "State" },
-      { name: "Firebase / FCM", level: 80, category: "Backend" },
-      { name: "REST API Integration", level: 85, category: "Backend" },
-      { name: "Angular", level: 70, category: "Web" },
-      { name: "Git", level: 78, category: "Tools" },
-      { name: "Generative AI / LLM APIs", level: 60, category: "AI" },
-    ];
+                    <h1 className="hero-name">
+                        Balaji
+                        <br />
+                        <span className="hero-name-accent">N R.</span>
+                    </h1>
 
-    //Experience Card Data
-    const experiences: ExperienceData[] = [
-    {
-        role: "React Native Developer",
-        company: "Professional Experience",
-        period: "2022 – Present",
-        points: [
-        "Built cross-platform mobile apps serving thousands of users",
-        "Integrated REST APIs, Firebase & real-time sync",
-        "Implemented push notifications and deep linking",
-        "Optimized performance with Redux & memoization",
-        "Worked in agile sprints",
-        ],
-    },
-    {
-        role: "Angular Developer",
-        company: "Web Development",
-        period: "Project-Based",
-        points: [
-        "Built reusable Angular component libraries",
-        "Developed enterprise dashboards",
-        "Used RxJS for async workflows",
-        ],
-    },
-    ];
+                    <div className="hero-tags">
+                        <PrimaryTag label={heroTags} />
+                    </div>
 
+                    <p className="hero-description">
+                        Building high-performance mobile experiences and exploring the
+                        edge of AI-driven solutions. 2.8 years of crafting products that
+                        users love.
+                    </p>
 
-    return(
-        <>
-            <PrimaryBtn
-                label="View Projects"
-                onClick={onClick}
-                icons={true}
-                iconName={ArrowRight}
-            />
-            <PrimaryBtn
-                label="Resume"
-                onClick={onClick}
-                icons={false}
-            />
-            <div style={{}}>
-                <PrimaryTag label={tags} />
+                    <div className="hero-actions">
+                        <PrimaryButton
+                            label="View Projects"
+                            onClick={() => scrollToSection('#projects')}
+                            icons
+                            iconName={ArrowRight}
+                        />
+                        <PrimaryButton
+                            label="Download Resume"
+                            onClick={() => scrollToSection('#contact')}
+                            icons
+                            iconName={Download}
+                            variant="secondary"
+                            iconPosition="left"
+                        />
+                    </div>
+                </div>
+
+                <div className="hero-graphic">
+                    <div className="hero-graphic-square hero-graphic-square--outer" />
+                    <div className="hero-graphic-square hero-graphic-square--inner">
+                        <span>BNR</span>
+                    </div>
+                </div>
             </div>
-
-            <ExperienceCard
-                value="2.8"
-                title="Years of Experience"
-                tags={["iOS", "Android", "Web"]}
-            />
-
-            <InfoCard
-                icon={User}
-                value="2.8 Years"
-                title="Cross-platform mobile development"
-            />
-           <InfoCard
-                icon={Code}
-                value="Clean Code"
-                title="Scalable architecture & maintainable code"
-            />
-            <InfoCard
-                icon={Code}
-                value="Performance"
-                title="Optimized rendering, lazy loading & bundle sizes"
-            />
-           <InfoCard
-                icon={Code}
-                value="Clean Code"
-                title="Scalable architecture & maintainable code"
-            />
-
-            <Skills skillsData={skills} />
-
-            <div className="experience-grid">
-            {experiences.map((exp, i) => (
-                <ScrollReveal key={exp.role} delay={i * 150}>
-                    <WorkExperienceCard data={exp} />
-                </ScrollReveal>
-            ))}
-        </div>
-
-
-        </>
-    )
-}
+        </section>
+    );
+};
 
 export default HomePage;
