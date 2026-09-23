@@ -1,10 +1,18 @@
 .info-card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
   border-radius: 16px; /* rounded-2xl */
   border: 1px solid #27272A;
   background: #18181B;
   padding: 24px; /* p-6 */
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   transition: transform 0.3s ease,
               border-color 0.3s ease,
@@ -62,6 +70,7 @@
 
 .icon {
   font-size: 20px;
+  color: #F59E0B; /* default accent; index.css sets no global text color, so this must be explicit */
 }
 
 .card-arrow {
@@ -70,7 +79,7 @@
 }
 
 /* Hover effect */
-.card:hover .card-arrow {
+.info-card:hover .card-arrow {
   color: #F59E0B;
   transform: translate(3px, -3px) scale(1.05);
 }
@@ -80,6 +89,7 @@
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 4px;
+  color: #ffffff; /* index.css sets no global text color, so this must be explicit */
 }
 
 /* Description */

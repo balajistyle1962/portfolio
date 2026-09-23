@@ -20,7 +20,7 @@ const WorkExperienceCard: React.FC<ExperienceCardProps> = ({ data }) => {
   const { role, company, period, points } = data;
 
   return (
-    <div className="bento-card experience-card">
+    <div className="bento-card work-experience-card">
 
       {/* Header */}
       <div className="experience-header">

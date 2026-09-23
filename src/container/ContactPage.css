@@ -1,0 +1,62 @@
+.contact-page {
+  position: relative;
+  width: 100%;
+  padding: 96px 32px;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.contact-page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact-page-index {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+.contact-page-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.contact-page-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Intro */
+.contact-intro {
+  max-width: 560px;
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 40px;
+}
+
+/* Social cards */
+.contact-socials {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 64px 20px;
+  }
+}

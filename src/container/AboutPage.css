@@ -50,6 +50,7 @@
 .about-bio {
   height: 100%;
   box-sizing: border-box;
+  padding: 32px;
   text-align: left;
 }
 
@@ -73,7 +74,13 @@
 .about-info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(190px, auto);
   gap: 24px;
+}
+
+/* Alternate the icon accent (InfoCard defaults to amber) */
+.about-info-grid > div:nth-child(even) .icon {
+  color: #dd3fa8;
 }
 
 @media (max-width: 900px) {

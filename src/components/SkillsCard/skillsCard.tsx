@@ -3,20 +3,13 @@ import ScrollReveal from "../ScrollReveal/scrollReveal";
 import "./skillsCard.css";
 
 
-interface SkillBarProps {
+export interface Skill {
   name: string;
   level: number;
   category: string;
 }
 
-
-    interface Skill {
-      name: string;
-      level: number;
-      category: string;
-    }
-
-const SkillBar: React.FC<SkillBarProps> = ({ name, level, category }) => {
+const SkillBar: React.FC<Skill> = ({ name, level, category }) => {
   const [width, setWidth] = useState<number>(0);
   const ref = useRef<HTMLDivElement | null>(null);
 
