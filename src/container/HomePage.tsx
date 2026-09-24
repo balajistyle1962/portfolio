@@ -10,6 +10,19 @@ const heroTags: (string | TagItem)[] = [
     { label: 'Generative AI', icon: Sparkles },
 ];
 
+// Served from public/, so it's available at the site root.
+const RESUME_FILE_NAME = 'Balaji N R_Resume.pdf';
+const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent(RESUME_FILE_NAME)}`;
+
+const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = RESUME_URL;
+    link.download = RESUME_FILE_NAME;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+};
+
 const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -30,7 +43,7 @@ const HomePage = () => {
                     <h1 className="hero-name">
                         Balaji
                         <br />
-                        <span className="hero-name-accent">N R.</span>
+                        <span className="hero-name-accent">Ramesh N</span>
                     </h1>
 
                     <div className="hero-tags">
@@ -39,7 +52,7 @@ const HomePage = () => {
 
                     <p className="hero-description">
                         Building high-performance mobile experiences and exploring the
-                        edge of AI-driven solutions. 2.8 years of crafting products that
+                        edge of AI-driven solutions. 3+ years of crafting products that
                         users love.
                     </p>
 
@@ -52,7 +65,7 @@ const HomePage = () => {
                         />
                         <PrimaryButton
                             label="Download Resume"
-                            onClick={() => scrollToSection('#contact')}
+                            onClick={downloadResume}
                             icons
                             iconName={Download}
                             variant="secondary"

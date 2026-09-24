@@ -70,7 +70,7 @@ const AboutPage = () => {
 
                     <ScrollReveal delay={150}>
                         <ExperienceCard
-                            value="2.8"
+                            value="3.2"
                             title="Years of Experience"
                             tags={['iOS', 'Android', 'Web']}
                         />

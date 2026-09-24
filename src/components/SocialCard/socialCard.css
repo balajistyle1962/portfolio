@@ -41,6 +41,7 @@
   font-weight: 500;
   color: #ffffff; /* index.css sets no global text color, so this must be explicit */
   transition: color 0.3s;
+  overflow-wrap: anywhere; /* long emails/URLs wrap instead of widening the card */
 }
 
 .social-card:hover .social-text {

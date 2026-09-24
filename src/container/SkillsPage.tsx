@@ -8,7 +8,7 @@ const skills: Skill[] = [
     { name: 'Firebase / FCM', level: 80, category: 'Backend' },
     { name: 'REST API Integration', level: 85, category: 'Backend' },
     { name: 'Angular', level: 70, category: 'Web' },
-    { name: 'Git', level: 78, category: 'Tools' },
+    { name: 'Java/Spring Boot', level: 78, category: 'Language' },
     { name: 'Generative AI / LLM APIs', level: 60, category: 'AI' },
 ];
 

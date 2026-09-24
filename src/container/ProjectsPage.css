@@ -1,30 +1,30 @@
-.contact-page {
+.projects-page {
   position: relative;
   width: 100%;
   padding: 96px 32px;
 }
 
-.contact-container {
+.projects-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Header */
-.contact-page-header {
+.projects-page-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
-.contact-page-index {
+.projects-page-index {
   font-family: "JetBrains Mono", monospace;
   font-size: 14px;
   font-weight: 600;
   color: #f59e0b;
 }
 
-.contact-page-title {
+.projects-page-title {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
   color: #ffffff;
@@ -32,47 +32,32 @@
   white-space: nowrap;
 }
 
-.contact-page-line {
+.projects-page-line {
   flex: 1;
   height: 1px;
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Intro */
-.contact-intro {
-  max-width: 560px;
-  color: #9ca3af;
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0 0 40px;
-}
-
-/* Socials + message form */
-.contact-grid {
+/* Grid */
+.projects-page-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
-}
-
-.contact-socials {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
-.contact-message {
+.projects-page-grid > .scroll-reveal {
   height: 100%;
 }
 
-@media (max-width: 900px) {
-  .contact-grid {
+@media (max-width: 800px) {
+  .projects-page-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .contact-page {
+  .projects-page {
     padding: 64px 20px;
   }
 }

@@ -53,6 +53,12 @@
 
   font-size: 1.2rem;
   font-weight: 700;
+
+  /* Same gradient as the hero name accent (.hero-name-accent in HomePage.css) */
+  background: linear-gradient(90deg, #f9a826, #dd3fa8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ------------------------- */

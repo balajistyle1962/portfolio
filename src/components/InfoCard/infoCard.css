@@ -90,12 +90,31 @@
   font-size: 16px;
   margin-bottom: 4px;
   color: #ffffff; /* index.css sets no global text color, so this must be explicit */
+  text-align: left;
+  margin-top: 0px;
 }
 
-/* Description */
+/* Description: always a two-line block. max-width makes the text wrap after
+   ~35 characters (so it doesn't sit on one line on wide cards), line-clamp cuts
+   anything past line 2 with an ellipsis, and min-height keeps the block two lines
+   tall so short descriptions still line up across the row. */
 .card-desc {
+  --desc-line-height: 1.5;
+
+  max-width: 32ch;
+  min-height: calc(2em * var(--desc-line-height));
+  margin: 0;
+
   font-size: 14px;
+  line-height: var(--desc-line-height);
   color: #9CA3AF;
+  text-align: left;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 

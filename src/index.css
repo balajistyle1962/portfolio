@@ -70,9 +70,25 @@ button:focus-visible {
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+/* Padding counts inside an element's width, so `width: 100%` + padding never overflows. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   background-color: #111113;
+  /* Clip decorative elements (e.g. hero glow squares) that extend past the viewport.
+     `clip` rather than `hidden` so it doesn't create a scroll container. */
+  overflow-x: clip;
+}
+
+/* Keep section headings clear of the fixed navbar when jumping via nav links. */
+section[id] {
+  scroll-margin-top: var(--nav-height, 72px);
 }
 
 :root {

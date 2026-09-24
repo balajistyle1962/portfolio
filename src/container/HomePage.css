@@ -6,7 +6,8 @@
   display: flex;
   align-items: center;
 
-  /* padding: 128px 32px 64px; */
+  /* Top padding clears the fixed navbar; side padding is the page gutter. */
+  padding: calc(var(--nav-height, 72px) + 56px) 32px 64px;
   overflow: hidden;
 }
 
@@ -142,6 +143,10 @@
 }
 
 @media (max-width: 900px) {
+  .home-page {
+    padding: calc(var(--nav-height, 72px) + 32px) 20px 48px;
+  }
+
   .hero-container {
     flex-direction: column;
     text-align: center;

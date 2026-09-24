@@ -56,8 +56,6 @@ const Skills: React.FC<{ skillsData: Skill[] }> = ({ skillsData }) => {
   return (
     <section id="skills" className="skills-section">
 
-      <div className="skills-overlay" />
-
       <div className="skills-container">
 
         <ScrollReveal>

@@ -25,6 +25,16 @@ const experiences: ExperienceData[] = [
             'Built responsive enterprise dashboards with real-time visualization',
             'Applied RxJS for complex async workflows and state management',
         ],
+    },
+    {
+        role: 'Java Backend Developer',
+        company: 'Backend Development',
+        period: 'Project-Based',
+        points: [
+            'Implemented Kafka consumers for real-time event ingestion, deserialization, and asynchronous event processing.',
+            'Built network-data reconciliation workflows to identify and process changes across network devices and systems.',
+            'Designed incremental discovery and processing logic using effective window logic',
+        ],
     }
 ];
 
